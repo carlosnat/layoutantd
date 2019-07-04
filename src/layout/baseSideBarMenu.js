@@ -3,13 +3,9 @@ import { Menu, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 import menuItems from '../routes/_nav';
 
-const BaseSideBarMenu = ({match}) => {
+const BaseSideBarMenu = () => {
 
-    const [navActive, setNavActive] = useState('');
-
-    useEffect(() => {
-        setNavActive(match.url)
-      }, [match]);
+    const [navActive, setNavActive] = useState('/dashboard');
 
     return (
         <Menu 
@@ -17,13 +13,14 @@ const BaseSideBarMenu = ({match}) => {
             mode="inline"
             selectedKeys={[navActive]}
             onSelect={({ key }) => setNavActive(key)}
+            defaultSelectedKeys={['/dashboard']}
         >
             {
                 menuItems.map( (item) => (
                     <Menu.Item key={item.path}>
                         <Link to={item.path}>
                             <Icon type={item.icon} />
-                            <span>{item.label}</span>
+                            <span>{item.label }</span>
                         </Link>
                     </Menu.Item>
                 ))

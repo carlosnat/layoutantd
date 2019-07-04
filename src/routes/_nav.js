@@ -2,12 +2,12 @@ const menuItems = [
     {
         label: 'Dashboard',
         path: '/dashboard',
-        icon: 'user',
+        icon: 'dashboard',
     },
     {
         label: 'Pedidos',
         path: '/orders',
-        icon: 'video-camera',
+        icon: 'snippets',
     }
 ];
 
