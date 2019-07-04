@@ -2,7 +2,7 @@ import React from 'react';
 import { Icon, Layout } from 'antd';
 const { Header } = Layout;
 
-const BaseHeader = ({collapsed, toggle}) => {
+const BaseHeader = ({collapsed, toggle}: any) => {
 
     const trigger = {
         fontSize: "18px",

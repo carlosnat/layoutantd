@@ -7,20 +7,20 @@ import BaseContent from './baseContent';
 
 const { Footer } = Layout;
 
-const BaseLayout = ({match}) => {
+const BaseLayout = () => {
 
     const [collapsed, setCollapsed] = useState(false);
 
-    const onCollapse = (iscollapsed ) => {
+    const onCollapse = (iscollapsed: any ) => {
         setCollapsed(iscollapsed);
     }
 
     return (
         <Layout style={{ minHeight: '100vh' }}>
-            <BaseSideBar onCollapse={onCollapse} collapsed={collapsed} match={match}/>
+            <BaseSideBar onCollapse={onCollapse} collapsed={collapsed}/>
             <Layout>
                 <BaseHeader toggle={onCollapse} collapsed={collapsed}/>
-                <BaseContent match={match} />
+                <BaseContent />
                 <Footer style={{ textAlign: 'right' }}>Ant Design ©2018 Created by Ant UED</Footer>
             </Layout>
         </Layout>

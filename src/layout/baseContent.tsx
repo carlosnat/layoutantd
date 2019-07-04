@@ -1,10 +1,10 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import routes from '../routes/routes';
 import { Breadcrumb, Layout } from 'antd';
 import { Route, Switch, Redirect } from 'react-router-dom';
 const { Content } = Layout;
 
-const BaseContent = ({match}) => {
+const BaseContent = () => {
 
     return (
         <Content style={{ margin: '0 16px' }}>
@@ -13,7 +13,6 @@ const BaseContent = ({match}) => {
                 <Breadcrumb.Item>Bill</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-                <Suspense>
                     <Switch>
                         {routes.map((route, idx) => {
                             return route.component ? (
@@ -21,15 +20,13 @@ const BaseContent = ({match}) => {
                                 key={idx}
                                 path={`${route.path}`}
                                 exact={route.exact}
-                                name={route.name}
                                 render={props => (
-                                <route.component {...props} />
+                                    <route.component />
                                 )} />
                             ) : (null);
                         })}
                         <Redirect from="/" to="/dashboard" />
                     </Switch>
-                </Suspense>
             </div>
         </Content>
     )

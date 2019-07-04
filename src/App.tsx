@@ -10,7 +10,7 @@ const App = () => {
     <HashRouter>
       <Suspense fallback={<Loading />}>
         <Switch>
-          <Route path="/" name="Dashboard" render={props => <BaseLayout {...props}/>} />
+          <Route path="/" render={props => <BaseLayout />} />
         </Switch>
       </Suspense>
     </HashRouter>
