@@ -17,7 +17,7 @@ const BaseLayout = ({match}) => {
 
     return (
         <Layout style={{ minHeight: '100vh' }}>
-            <BaseSideBar onCollapse={onCollapse} collapsed={collapsed}/>
+            <BaseSideBar onCollapse={onCollapse} collapsed={collapsed} match={match}/>
             <Layout>
                 <BaseHeader toggle={onCollapse} collapsed={collapsed}/>
                 <BaseContent match={match} />
